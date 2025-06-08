@@ -2,13 +2,14 @@
 Final Project Komputasi Numerik yang dikerjakan oleh saya Zulkarnaen Ramdhani sebagai salah satu anggota dari kelompok A03
 
 ### Bahas Fungsi Main
-phyton
+```phyton
 f = input("Masukkan fungsi f(x) nya: ")
 f = sympify(f)
 xl = float(input("Masukkan batas bawahnya (XL): "))
 xu = float(input("Masukkan batas atasnya (XU): "))
 x_real = float(input("Masukkan X sebenarnya: "))
 bagi_dua(xl, xu, x_real, f)
+```
 
 1. Masukkan input buat fungsinya dalam bentuk string, contoh : f = x*3 + 10*x*2 - 7*x - 196
 2. Jadikan inputan fungsi tersebut menjadi operasi matematika menggunakan sympify
@@ -16,20 +17,21 @@ bagi_dua(xl, xu, x_real, f)
 4. Masuk ke sub-fungsi bagi_dua
 
 ### Bahas Sub-fungsi bagi_dua, Et, dan Ea
-phyton
+```phyton
 def error_true(x_real, xr):
     return abs((x_real - xr) / x_real) * 100
+```
 
 1. Untuk menemukan nilai Error True, yang mana nilai yang didapat dibandingkan dengan nilai variabel sebenarnya
 
-phyton
+```phyton
 def error_aprox(xr, xr_old):
     return abs((xr - xr_old) / xr) * 100 if xr != 0 else float('inf') 
-
+```
 1. Untuk menemukan nilai Error Aprox, yang mana nilai yang didapat dibandingkan dengan nilai sebelumnya
 2. Pastikan bahwa Xr != 0, jika tidak float('inf') karena angka 0 bisa menjadi oembagi
 
-phyton
+```phyton
 def bagi_dua(xl, xu, x_real, f):
     x = symbols('x')
     xr_old = 0
@@ -63,7 +65,7 @@ def bagi_dua(xl, xu, x_real, f):
             break
         xr_old = xr
         i+=1
-
+```
 1. Mengubah X dalam bentuk string menjadi bentuk variabel math
 2. set Xr_old = 0, hal ini berguna untuk menentukan Ea nanti
 3. While true, dan diakhiri ketika 0 < Et < 1
